@@ -26,18 +26,19 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login() {
     if (_formKey.currentState?.validate() ?? false) {
-
+      // Aqui você pode adicionar a verificação real para email e senha.
       String email = _emailController.text;
       String password = _passwordController.text;
 
-      if (email == 'joaopaulo@gmail.com' && password == 'senha123') {
-
+      // Exemplo de validação simples (adicione a lógica de autenticação real conforme necessário)
+      if (email == 'user@example.com' && password == 'password123') {
+        // Se as credenciais estiverem corretas, navega para a próxima página.
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => Lista()),
         );
       } else {
-    
+        // Exibe um erro se as credenciais estiverem incorretas.
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Credenciais incorretas')),
         );
@@ -86,6 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   if (value == null || value.isEmpty) {
                     return 'Por favor, insira um email';
                   }
+                  return null;
                 },
               ),
               SizedBox(height: 16.0),
@@ -123,7 +125,7 @@ class Lista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Segunda Página')),
+      appBar: AppBar(title: Text('gunda Página')),
       body: Center(child: Text('Bem-vindo à segunda página!')),
     );
   }
